@@ -25,17 +25,16 @@ const UsersRouter = require('./users/routes.config');
 AuthorizationRouter.routesConfig(app);
 UsersRouter.routesConfig(app);
 
+const CategoriasRouter = require('./categoria/routes/categoria.routes');
+CategoriasRouter.categoriaRoutes(app);
 
-
-
+const ProductosRouter = require('./productos/routes/producto.routes');
+ProductosRouter.productoRoutes(app);
 
 const server = app.listen(PORT, function () {
     console.log('app listening at port %s', PORT);
 });
 
-// const server = app.listen(PORT, () => {
-//     console.log('app listening at port %s', PORT);
-// });
 
 // Para RENDER
 server.keepAliveTimeout = 120 * 1000;

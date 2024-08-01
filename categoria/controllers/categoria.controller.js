@@ -1,12 +1,7 @@
-const UserModel = require('../models/users.model');
-const crypto = require('crypto');
+const CategoriaModel = require('../models/categoria.model');
 
 exports.insert = (req, res) => {
-    let salt = crypto.randomBytes(16).toString('base64');
-    let hash = crypto.createHmac('sha512', salt).update(req.body.password).digest("base64");
-    req.body.password = salt + "$" + hash;
-    // req.body.permissionLevel = 1;
-    UserModel.createUser(req.body)
+    CategoriaModel.createCategoria(req.body)
         .then((result) => {
             res.status(201).send({id: result._id});
         });
@@ -21,37 +16,37 @@ exports.list = (req, res) => {
             page = Number.isInteger(req.query.page) ? req.query.page : 0;
         }
     }
-    UserModel.list(limit, page)
+    CategoriaModel.list(limit, page)
         .then((result) => {
             res.status(200).send(result);
         })
 };
 
 exports.getById = (req, res) => {
-    console.log(req.params.userId)
-    UserModel.findById(req.params.userId)
+    CategoriaModel.findById(req.params.categoriaId)
         .then((result) => {
             res.status(200).send(result);
         });
 };
 
 exports.patchById = (req, res) => {
-    if (req.body.password) {
-        let salt = crypto.randomBytes(16).toString('base64');
-        let hash = crypto.createHmac('sha512', salt).update(req.body.password).digest("base64");
-        req.body.password = salt + "$" + hash;
-    }
-
-    UserModel.patchUser(req.params.userId, req.body)
+    CategoriaModel.patchUser(req.params.categoriaId, req.body)
         .then((result) => {
             res.status(204).send({});
         });
-
 };
 
 exports.removeById = (req, res) => {
-    UserModel.removeById(req.params.userId)
+    CategoriaModel.removeById(req.params.categoriaId)
         .then((result)=>{
             res.status(204).send({});
         });
 };
+
+exports.getByNom = (req, res) => {
+    CategoriaModel.findByNom(req.params.categoriaNom)
+        .then((result) => {
+            res.status(200).send(result);
+        });
+};
+
