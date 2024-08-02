@@ -1,5 +1,5 @@
 
-const CategoriaController = require('../controllers/categoria.controller');
+const ClienteController = require('../controllers/cliente.controller');
 const PermissionMiddleware = require('../../common/middlewares/auth.permission.middleware');
 const ValidationMiddleware = require('../../common/middlewares/auth.validation.middleware');
 const config = require('../../common/config/env.config');
@@ -9,46 +9,41 @@ const PAID = config.permissionLevels.PAID_USER;
 const FREE = config.permissionLevels.NORMAL_USER;
 
 
-exports.categoriaRoutes = function (app) {
+exports.clienteRoutes = function (app) {
 
     // Solo el ADMINISTRADOR puede registrar
-    app.post('/categorias', [
+    app.post('/clientes', [
         ValidationMiddleware.validJWTNeeded,
         PermissionMiddleware.minimumPermissionLevelRequired(ADMIN),
-        CategoriaController.insert
+        ClienteController.insert
     ]);
 
     // Solo lista los usuarios con el acceso PAID
-    app.get('/categorias', [
+    app.get('/clientes', [
         ValidationMiddleware.validJWTNeeded,
         PermissionMiddleware.minimumPermissionLevelRequired(PAID),
-        CategoriaController.list
+        ClienteController.list
     ]);
 
-    // Solo lee si el usuario con acceso PAID
-    app.get('/categorias/:categoriaId', [
+       // Solo lee si el usuario con acceso PAID
+    app.get('/clientes/:clienteId', [
         ValidationMiddleware.validJWTNeeded,
         PermissionMiddleware.minimumPermissionLevelRequired(PAID),
-        CategoriaController.getById
+        ClienteController.getById
     ]);
 
      // Solo actualiza si es el ADMINISTRADOR
-     app.patch('/categorias/:categoriaId', [
+     app.patch('/clientes/:clienteId', [
         ValidationMiddleware.validJWTNeeded,
         PermissionMiddleware.minimumPermissionLevelRequired(ADMIN),
-        CategoriaController.patchById
+        ClienteController.patchById
     ]);
 
     // Solo el usuario ADMIN puede eliminar
-    app.delete('/categorias/:categoriaId', [
+    app.delete('/clientes/:clienteId', [
         ValidationMiddleware.validJWTNeeded,
         PermissionMiddleware.minimumPermissionLevelRequired(ADMIN),
-        CategoriaController.removeById
-    ]);
-
-    // Devuelve el ID
-    app.get('/categoriasNom/:categoriaNom', [
-        CategoriaController.getByNom
+        ClienteController.removeById
     ]);
 
 };

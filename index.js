@@ -31,6 +31,9 @@ CategoriasRouter.categoriaRoutes(app);
 const ProductosRouter = require('./productos/routes/producto.routes');
 ProductosRouter.productoRoutes(app);
 
+const ClientesRouter = require('./clientes/routes/cliente.routes');
+ClientesRouter.clienteRoutes(app);
+
 const server = app.listen(PORT, function () {
     console.log('app listening at port %s', PORT);
 });
