@@ -96,3 +96,11 @@ exports.findByUserId = (ordenuserId) => {
       });
 };
 
+exports.findByEstado = (ordenEstado) => {
+  const estadoRegex = new RegExp(ordenEstado, 'i');
+  return Orden.find( {estado : estadoRegex } )
+      .then((result) => {
+          return result;
+      });
+};
+

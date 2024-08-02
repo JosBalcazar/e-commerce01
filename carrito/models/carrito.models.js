@@ -69,9 +69,6 @@ exports.removeById = (carritoId) => {
 };
 
 exports.findByUserId = (userId) => {
-
-    console.log(userId)
-    
     return Carrito.find( {user_id : userId })
         .then((result) => {
             return result;

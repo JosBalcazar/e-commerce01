@@ -50,4 +50,10 @@ exports.getByUserId = (req, res) => {
         });
 };
 
+exports.getByEstado = (req, res) => {
+    OrdenModel.findByEstado(req.params.ordenEstado)
+        .then((result) => {
+            res.status(200).send(result);
+        });
+};
 

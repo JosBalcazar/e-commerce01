@@ -46,11 +46,18 @@ exports.ordenRoutes = function (app) {
         OrdenController.removeById
     ]);
 
-    // Solo lee si el usuario con acceso PAID
+    // Solo lee si el usuario con acceso ADMIN
     app.get('/ordenesuserId/:ordenuserId', [
         ValidationMiddleware.validJWTNeeded,
         PermissionMiddleware.minimumPermissionLevelRequired(ADMIN),
         OrdenController.getByUserId
+    ]);
+
+    // Solo lee si el usuario con acceso ADMIN
+    app.get('/ordenesestado/:ordenEstado', [
+        ValidationMiddleware.validJWTNeeded,
+        PermissionMiddleware.minimumPermissionLevelRequired(ADMIN),
+        OrdenController.getByEstado
     ]);
 
 };
