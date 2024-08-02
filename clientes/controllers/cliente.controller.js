@@ -1,5 +1,4 @@
 const ClienteModel = require('../models/cliente.model');
-// const crypto = require('crypto');
 
 exports.insert = (req, res) => {
     ClienteModel.createCliente(req.body)
@@ -41,5 +40,12 @@ exports.removeById = (req, res) => {
     ClienteModel.removeById(req.params.clienteId)
         .then((result)=>{
             res.status(204).send({});
+        });
+};
+
+exports.getByUserId = (req, res) => {
+    ClienteModel.findByUserId(req.params.clienteUserId)
+        .then((result) => {
+            res.status(200).send(result);
         });
 };

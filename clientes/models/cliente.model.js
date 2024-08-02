@@ -61,3 +61,10 @@ exports.removeById = (clienteId) => {
       });
   });
 };
+
+exports.findByUserId = (clienteUserId) => {
+    return Cliente.find( {user_id : clienteUserId } )
+        .then((result) => {
+            return result;
+        });
+};

@@ -46,4 +46,11 @@ exports.clienteRoutes = function (app) {
         ClienteController.removeById
     ]);
 
+    // Solo actualiza si es el ADMINISTRADOR
+    app.get('/clientesuserId/:clienteUserId', [
+        ValidationMiddleware.validJWTNeeded,
+        PermissionMiddleware.minimumPermissionLevelRequired(ADMIN),
+        ClienteController.getByUserId
+    ]);
+
 };
