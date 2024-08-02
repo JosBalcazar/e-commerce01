@@ -1,5 +1,4 @@
 const mongoose = require('../../common/services/mongoose.service').mongoose;
-// const User = require("../../users/models/users.model");
 const Schema = mongoose.Schema;
 
 const clienteSchema = new Schema({

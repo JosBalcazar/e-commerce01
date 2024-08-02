@@ -34,6 +34,10 @@ ProductosRouter.productoRoutes(app);
 const ClientesRouter = require('./clientes/routes/cliente.routes');
 ClientesRouter.clienteRoutes(app);
 
+const CarritoRouter = require('./carrito/routes/carrito.routes');
+CarritoRouter.carritoRoutes(app);
+
+
 const server = app.listen(PORT, function () {
     console.log('app listening at port %s', PORT);
 });
