@@ -104,3 +104,11 @@ exports.findByEstado = (ordenEstado) => {
       });
 };
 
+exports.findByNumOrd = (ordenNum) => {
+  const ordenRegex = new RegExp(ordenNum, 'i');
+  return Orden.find( {nroord : ordenRegex } )
+      .then((result) => {
+          return result;
+      });
+};
+

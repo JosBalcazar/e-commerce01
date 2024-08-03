@@ -60,4 +60,11 @@ exports.ordenRoutes = function (app) {
         OrdenController.getByEstado
     ]);
 
+    // Solo lee si el usuario con acceso ADMIN - Devulelve ID
+    app.get('/ordenesnumero/:ordenNum', [
+        ValidationMiddleware.validJWTNeeded,
+        PermissionMiddleware.minimumPermissionLevelRequired(ADMIN),
+        OrdenController.getByNumOrd
+    ]);
+
 };

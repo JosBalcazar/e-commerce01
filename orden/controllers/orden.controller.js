@@ -57,3 +57,10 @@ exports.getByEstado = (req, res) => {
         });
 };
 
+exports.getByNumOrd = (req, res) => {
+    OrdenModel.findByNumOrd(req.params.ordenNum)
+        .then((result) => {
+            res.status(200).send(result);
+        });
+};
+
