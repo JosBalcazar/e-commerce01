@@ -3,6 +3,20 @@ const app = express();
 require('dotenv').config();
 const PORT = process.env.PORT || 8000;
 
+
+// =====================================================================
+// CONFIGURACION PARA MOSTRAR CARRITO Y STRIPE
+const bodyParser = require('body-parser');
+const ejs = require('ejs');
+const { stripe } = require('./config');
+
+app.use(bodyParser.json());
+app.use(express.static('public'));
+app.set('view engine', 'ejs');
+// CONFIGURACION PARA MOSTRAR CARRITO Y STRIPE
+// =====================================================================
+
+
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Credentials', 'true');
@@ -42,6 +56,77 @@ OrdenesRouter.ordenRoutes(app);
 
 const PagosRouter = require('./pagos/routes/pago.routes');
 PagosRouter.pagoRoutes(app);
+
+
+// =====================================================================
+// RENDERIZAR PRODUCTOS EN LA PAGINA PRINCIPAL
+// Modelo del producto
+const Product = require('./productos/models/producto.model');
+
+app.get('/', async (req, res) => {
+    try {
+        const products = await Product.list();
+        res.render('index.ejs', { products });
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+// RENDERIZAR PRODUCTOS EN LA PAGINA PRINCIPAL
+// =====================================================================
+
+
+// =====================================================================
+// MANEJAR PROCESO DE CHECKOUT
+app.post('/checkout', async (req, res) => {
+    const { items } = req.body;
+    let lineItems = [];
+
+    // Crear un arreglo de items para Stripe
+    for (const item of items) {
+        const product = await Product.findById(item.productId);
+        if (product) {
+            lineItems.push({
+                price_data: {
+                    currency: 'usd',
+                    product_data: {
+                        name: product.descripcion
+                    },
+                    unit_amount: product.precio * 100 // Stripe usa centavos
+                },
+                quantity: item.quantity
+            });
+        }
+    }
+
+    try {
+        // Crear una sesión de pago en Stripe
+        const session = await stripe.checkout.sessions.create({
+            payment_method_types: ['card'],
+            line_items: lineItems,
+            mode: 'payment',
+            success_url: `${process.env.BASE_URL}/success`,
+            cancel_url: `${process.env.BASE_URL}/cancel`
+        });
+
+        res.json({ id: session.id });
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+// Página de éxito
+app.get('/success', (req, res) => {
+    res.render('checkout', { message: '¡Pago realizado con éxito!' });
+});
+
+// Página de cancelación
+app.get('/cancel', (req, res) => {
+    res.render('checkout', { message: 'Pago cancelado.' });
+});
+// MANEJAR PROCESO DE CHECKOUT
+// =====================================================================
+
+
 
 
 const server = app.listen(PORT, function () {
