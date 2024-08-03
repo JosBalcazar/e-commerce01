@@ -40,6 +40,9 @@ CarritoRouter.carritoRoutes(app);
 const OrdenesRouter = require('./orden/routes/orden.routes');
 OrdenesRouter.ordenRoutes(app);
 
+const PagosRouter = require('./pagos/routes/pago.routes');
+PagosRouter.pagoRoutes(app);
+
 
 const server = app.listen(PORT, function () {
     console.log('app listening at port %s', PORT);
