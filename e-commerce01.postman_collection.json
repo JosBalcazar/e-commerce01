@@ -1,0 +1,1661 @@
+{
+	"info": {
+		"_postman_id": "3655cb4d-bb38-414a-8e66-1f952804a92d",
+		"name": "e-commerce01",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19237642"
+	},
+	"item": [
+		{
+			"name": "Usuario-Registro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\" : \"Nombre 15\",\r\n    \"lastName\" : \"Apellido 15\",\r\n    \"email\" : \"correo15@correo.com\",\r\n    \"password\" : \"12345\",\r\n    \"permissionLevel\" : 2048\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/users",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario-Auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"correo05@correo.com\",\r\n    \"password\" : \"12345\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/auth",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario-Lista Usuarios",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTkzMjFkMWE0MjA4YjRiYzFkMzYiLCJlbWFpbCI6ImNvcnJlbzA0QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjQsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA0IEFwZWxsaWRvIDA0IiwicmVmcmVzaEtleSI6InZGWUJqZG0xMkVEYkQrMG5rT1NsaVE9PSIsImlhdCI6MTcyMjUyMjYwOX0.M4AmqhH4bhtx4f2f4JC6bdW4Vz6hNFjNyBxX3uKIHQw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/users",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario-Lee por ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTkxMzFkMWE0MjA4YjRiYzFkMzAiLCJlbWFpbCI6ImNvcnJlbzAxQGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjEsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDAxIEFwZWxsaWRvIDAwMSIsInJlZnJlc2hLZXkiOiJuOWRFWHRkWXBmdVdPT0VKRXNjVkdBPT0iLCJpYXQiOjE3MjI1MjQyMzl9.EsPSLXhPAX7R89UtuDv8AWDV0-W_0304nj1ZFs76kso",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/users/66a819131d1a4208b4bc1d30",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"users",
+						"66a819131d1a4208b4bc1d30"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario-Modifica por ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTkxYzFkMWE0MjA4YjRiYzFkMzIiLCJlbWFpbCI6ImNvcnJlbzAyQGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjEsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDAyIEFwZWxsaWRvIDAyIiwicmVmcmVzaEtleSI6ImFxK2xnS2RpQURXYmZjUk5EVnY5UVE9PSIsImlhdCI6MTcyMjUyMzQyMn0.wTl7YtPxjRo99a0KhvL-vpN93ezwUqVR_iYuS0mGnak",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\" : \"Nombre 002\",\r\n    \"lastName\" : \"Apellido 002\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/users/66a8191c1d1a4208b4bc1d32",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"users",
+						"66a8191c1d1a4208b4bc1d32"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario-Elimina por ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTk0MTFkMWE0MjA4YjRiYzFkMzgiLCJlbWFpbCI6ImNvcnJlbzA1QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA1IEFwZWxsaWRvIDA1IiwicmVmcmVzaEtleSI6InhSL2IvU0NXZndBVkFvZml2cUlqbXc9PSIsImlhdCI6MTcyMjUyMzU4OX0.hjk513A_AwU49bX-mxRAtSSKIdpu8SfYQO9XV-L8KJo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/users/66ab0c8675721f0074eb9360",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"users",
+						"66ab0c8675721f0074eb9360"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Categoria-Registro",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTk0MTFkMWE0MjA4YjRiYzFkMzgiLCJlbWFpbCI6ImNvcnJlbzA1QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA1IEFwZWxsaWRvIDA1IiwicmVmcmVzaEtleSI6IjFYMjhoZmVJcVBsMWhWUFIycElVc3c9PSIsImlhdCI6MTcyMjU0MDA4NH0.eHK6Tgt7zfDThVaiDxXOQYcfZPeV7Rr4hy2yz9520qw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"categoria\" : \"OTROS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/categorias",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Categoria-Lista Categorias",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTkzMjFkMWE0MjA4YjRiYzFkMzYiLCJlbWFpbCI6ImNvcnJlbzA0QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjQsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA0IEFwZWxsaWRvIDA0IiwicmVmcmVzaEtleSI6IlZmTTJjS0J0YUp6ajF5SVA1M1FKV2c9PSIsImlhdCI6MTcyMjU0MDIyMn0.tqxU3DSc46o23SCCZOnQosg40BRWFJegeHkWIVgNHG4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/categorias",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Categoria-Lee por ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTkzMjFkMWE0MjA4YjRiYzFkMzYiLCJlbWFpbCI6ImNvcnJlbzA0QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjQsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA0IEFwZWxsaWRvIDA0IiwicmVmcmVzaEtleSI6IlZmTTJjS0J0YUp6ajF5SVA1M1FKV2c9PSIsImlhdCI6MTcyMjU0MDIyMn0.tqxU3DSc46o23SCCZOnQosg40BRWFJegeHkWIVgNHG4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/categorias/66a8584c9a22a157bca2861b",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"categorias",
+						"66a8584c9a22a157bca2861b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Categoria-Modifica por ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTk0MTFkMWE0MjA4YjRiYzFkMzgiLCJlbWFpbCI6ImNvcnJlbzA1QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA1IEFwZWxsaWRvIDA1IiwicmVmcmVzaEtleSI6IlN5dXlwWFdFOU16SGtKMDdMem9mbWc9PSIsImlhdCI6MTcyMjU0MDUxM30.a9gwzp_a63jRXK47JM_nHdlSVcQJowawWOv2OVGzE3Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"categoria\" : \"PIÑONES\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/categorias/66abe166c0e43f0075ac9d16",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"categorias",
+						"66abe166c0e43f0075ac9d16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Categoria-Elimina por ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTk0MTFkMWE0MjA4YjRiYzFkMzgiLCJlbWFpbCI6ImNvcnJlbzA1QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA1IEFwZWxsaWRvIDA1IiwicmVmcmVzaEtleSI6IlN5dXlwWFdFOU16SGtKMDdMem9mbWc9PSIsImlhdCI6MTcyMjU0MDUxM30.a9gwzp_a63jRXK47JM_nHdlSVcQJowawWOv2OVGzE3Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"categoria\" : \"PIÑONES\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/categorias/66abe166c0e43f0075ac9d16",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"categorias",
+						"66abe166c0e43f0075ac9d16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Categoria-Devuelve ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/categoriasNom/RODAMIENTOS",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"categoriasNom",
+						"RODAMIENTOS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto-Registro",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTk0MTFkMWE0MjA4YjRiYzFkMzgiLCJlbWFpbCI6ImNvcnJlbzA1QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA1IEFwZWxsaWRvIDA1IiwicmVmcmVzaEtleSI6IjFYMjhoZmVJcVBsMWhWUFIycElVc3c9PSIsImlhdCI6MTcyMjU0MDA4NH0.eHK6Tgt7zfDThVaiDxXOQYcfZPeV7Rr4hy2yz9520qw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codigo\" :\"Codigo 07\",\r\n    \"descripcion\": \"Descripcion 07\",\r\n    \"marca\" : \"NTN\",\r\n    \"medida\" : \"PZA\",\r\n    \"categoria\" : \"66a865de450c706148b29478\",\r\n    \"precio\" : 5,\r\n    \"stock\" : 100,\r\n    \"imagen\" : \" https://res.cloudinary.com/rsc/image/upload/b_rgb:FFFFFF,c_pad,dpr_1.0,f_auto,q_auto,w_700/c_pad,w_700/F6671055-01\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/productos",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto-Lista Productos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTkzMjFkMWE0MjA4YjRiYzFkMzYiLCJlbWFpbCI6ImNvcnJlbzA0QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjQsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA0IEFwZWxsaWRvIDA0IiwicmVmcmVzaEtleSI6InMxV1EwL2pKUFpSSlN1VHdaUVdJZkE9PSIsImlhdCI6MTcyMjU0MTYwNX0.rkhrVc0MI_B0lygt3MFcu3uMxgt4uFTkhAkuD2w90-A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/productos",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto-Lee por ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTkzMjFkMWE0MjA4YjRiYzFkMzYiLCJlbWFpbCI6ImNvcnJlbzA0QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjQsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA0IEFwZWxsaWRvIDA0IiwicmVmcmVzaEtleSI6InMxV1EwL2pKUFpSSlN1VHdaUVdJZkE9PSIsImlhdCI6MTcyMjU0MTYwNX0.rkhrVc0MI_B0lygt3MFcu3uMxgt4uFTkhAkuD2w90-A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/productos/66a919f30a093713703b6bab",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"productos",
+						"66a919f30a093713703b6bab"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto-Modifica por ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTk0MTFkMWE0MjA4YjRiYzFkMzgiLCJlbWFpbCI6ImNvcnJlbzA1QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA1IEFwZWxsaWRvIDA1IiwicmVmcmVzaEtleSI6ImQ3Vkh5UEdRY0xwM0ZZMncrRVc3ZGc9PSIsImlhdCI6MTcyMjU0MTkxNX0.FwL5JtqyTMp8dvvpAcLHbT0OfpNm6Dpz62lNbV8Hp1I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"descripcion\": \"Descripcion 004\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/productos/66abe57ec0e43f0075ac9d1d",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"productos",
+						"66abe57ec0e43f0075ac9d1d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto-Elimina por ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTk0MTFkMWE0MjA4YjRiYzFkMzgiLCJlbWFpbCI6ImNvcnJlbzA1QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA1IEFwZWxsaWRvIDA1IiwicmVmcmVzaEtleSI6ImQ3Vkh5UEdRY0xwM0ZZMncrRVc3ZGc9PSIsImlhdCI6MTcyMjU0MTkxNX0.FwL5JtqyTMp8dvvpAcLHbT0OfpNm6Dpz62lNbV8Hp1I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/productos/66abe57ec0e43f0075ac9d1d",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"productos",
+						"66abe57ec0e43f0075ac9d1d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto-Busca por categoria ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTkzMjFkMWE0MjA4YjRiYzFkMzYiLCJlbWFpbCI6ImNvcnJlbzA0QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjQsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA0IEFwZWxsaWRvIDA0IiwicmVmcmVzaEtleSI6InBZVm8xdTczczgxLzNKbU11U0VHK3c9PSIsImlhdCI6MTcyMjU0MjE4OX0.1CZtCLDbHhUljK0tnIzb37NKjQxzORWlP8sznqWvZLI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/productoscatId/66a8584c9a22a157bca2861b",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"productoscatId",
+						"66a8584c9a22a157bca2861b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto-Busca por nombre de marca",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTkzMjFkMWE0MjA4YjRiYzFkMzYiLCJlbWFpbCI6ImNvcnJlbzA0QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjQsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA0IEFwZWxsaWRvIDA0IiwicmVmcmVzaEtleSI6InBZVm8xdTczczgxLzNKbU11U0VHK3c9PSIsImlhdCI6MTcyMjU0MjE4OX0.1CZtCLDbHhUljK0tnIzb37NKjQxzORWlP8sznqWvZLI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/productosmarca/SKF",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"productosmarca",
+						"SKF"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto-Busca por nombre de categoria",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTkzMjFkMWE0MjA4YjRiYzFkMzYiLCJlbWFpbCI6ImNvcnJlbzA0QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjQsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA0IEFwZWxsaWRvIDA0IiwicmVmcmVzaEtleSI6InBZVm8xdTczczgxLzNKbU11U0VHK3c9PSIsImlhdCI6MTcyMjU0MjE4OX0.1CZtCLDbHhUljK0tnIzb37NKjQxzORWlP8sznqWvZLI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/productoscatNom/RODAMIENTOS",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"productoscatNom",
+						"RODAMIENTOS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto-Lista precios",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTkzMjFkMWE0MjA4YjRiYzFkMzYiLCJlbWFpbCI6ImNvcnJlbzA0QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjQsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA0IEFwZWxsaWRvIDA0IiwicmVmcmVzaEtleSI6InBZVm8xdTczczgxLzNKbU11U0VHK3c9PSIsImlhdCI6MTcyMjU0MjE4OX0.1CZtCLDbHhUljK0tnIzb37NKjQxzORWlP8sznqWvZLI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/productosprecio",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"productosprecio"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes-Registro",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTk0MTFkMWE0MjA4YjRiYzFkMzgiLCJlbWFpbCI6ImNvcnJlbzA1QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA1IEFwZWxsaWRvIDA1IiwicmVmcmVzaEtleSI6IjBwdWF1SjRKNEhVTHJaUmh0Qkdnb2c9PSIsImlhdCI6MTcyMjU0NTE4OH0.zb9FGNpeiFOvgEiwhpFB_2RhLwbDHKCfV3tGWD9AkLU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\" : \"66a8197dea5f1943945ce25a\",\r\n    \"nombre\": \"Cliente 07\",\r\n    \"direccion\" : \"Av. La Peruanidad 2547\",\r\n    \"telefono\" : \"985458795\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/clientes",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes-Lista Clientes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTkzMjFkMWE0MjA4YjRiYzFkMzYiLCJlbWFpbCI6ImNvcnJlbzA0QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjQsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA0IEFwZWxsaWRvIDA0IiwicmVmcmVzaEtleSI6IllDd0ZvK2NLYkNGZEZ3U094a0cxUWc9PSIsImlhdCI6MTcyMjU0NTAxNH0.JXo8Gmk7bh4p7z-0XPJsm4htAfMXbro2BRvQnMHvQ5Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/clientes",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes-Lee por ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTkzMjFkMWE0MjA4YjRiYzFkMzYiLCJlbWFpbCI6ImNvcnJlbzA0QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjQsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA0IEFwZWxsaWRvIDA0IiwicmVmcmVzaEtleSI6IllDd0ZvK2NLYkNGZEZ3U094a0cxUWc9PSIsImlhdCI6MTcyMjU0NTAxNH0.JXo8Gmk7bh4p7z-0XPJsm4htAfMXbro2BRvQnMHvQ5Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/clientes/66a9340f435fab49e05c9037",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"clientes",
+						"66a9340f435fab49e05c9037"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes-Modifica por ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTk0MTFkMWE0MjA4YjRiYzFkMzgiLCJlbWFpbCI6ImNvcnJlbzA1QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA1IEFwZWxsaWRvIDA1IiwicmVmcmVzaEtleSI6IjBwdWF1SjRKNEhVTHJaUmh0Qkdnb2c9PSIsImlhdCI6MTcyMjU0NTE4OH0.zb9FGNpeiFOvgEiwhpFB_2RhLwbDHKCfV3tGWD9AkLU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"direccion\" : \"Av. Los Heroes 358\"\r\n    }\r\n    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/clientes/66a9337dc4fb8d3cc01b0156",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"clientes",
+						"66a9337dc4fb8d3cc01b0156"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes-Elimina por ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTk0MTFkMWE0MjA4YjRiYzFkMzgiLCJlbWFpbCI6ImNvcnJlbzA1QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA1IEFwZWxsaWRvIDA1IiwicmVmcmVzaEtleSI6IjBwdWF1SjRKNEhVTHJaUmh0Qkdnb2c9PSIsImlhdCI6MTcyMjU0NTE4OH0.zb9FGNpeiFOvgEiwhpFB_2RhLwbDHKCfV3tGWD9AkLU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/clientes/66a9304542441e4620ec94c8",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"clientes",
+						"66a9304542441e4620ec94c8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes-Busca por User ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTk0MTFkMWE0MjA4YjRiYzFkMzgiLCJlbWFpbCI6ImNvcnJlbzA1QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA1IEFwZWxsaWRvIDA1IiwicmVmcmVzaEtleSI6IklLdHJzT01xa1I3T0tOVnhOL3FmNVE9PSIsImlhdCI6MTcyMjYzMTI3Nn0.6GBxjtS7mHni-PFSEanceTpOo38w6iq351Wqo59CjpM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/clientesuserId/66a819131d1a4208b4bc1d30",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"clientesuserId",
+						"66a819131d1a4208b4bc1d30"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Carrito-Registro",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTk0MTFkMWE0MjA4YjRiYzFkMzgiLCJlbWFpbCI6ImNvcnJlbzA1QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA1IEFwZWxsaWRvIDA1IiwicmVmcmVzaEtleSI6IktjUUpMMWdqTGhkMng5aVRiblBCQ0E9PSIsImlhdCI6MTcyMjYyNDUwNH0.X-MKW_esto6Yu3te7EnLaOlZFAqA5_Bm1tk3BX95yBU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": \"66a8191c1d1a4208b4bc1d32\",  // ID del usuario\r\n    \"items\": [\r\n        {\r\n            \"id_itm\": \"66abd37c004808071894e044\",  // ID del producto 1\r\n            \"cantidad\": 1,\r\n            \"precio\": 7,\r\n            \"total\": 7\r\n        },\r\n        {\r\n            \"id_itm\": \"66abe5a9c0e43f0075ac9d1f\",  // ID del producto 2\r\n            \"cantidad\": 2,\r\n            \"precio\": 7,\r\n            \"total\": 14\r\n        },\r\n        {\r\n            \"id_itm\": \"66a919f30a093713703b6bab\",  // ID del producto 3\r\n            \"cantidad\": 2,\r\n            \"precio\": 7,\r\n            \"total\": 14\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/carrito",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"carrito"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Carrito-Lista Carrito",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTkzMjFkMWE0MjA4YjRiYzFkMzYiLCJlbWFpbCI6ImNvcnJlbzA0QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjQsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA0IEFwZWxsaWRvIDA0IiwicmVmcmVzaEtleSI6IlFYOXkrYmNEdzkybjhrMCtKT1lMa2c9PSIsImlhdCI6MTcyMjYyNDY0NX0.WBJFOWdcA3xHhNKlgP1eMyaTzo1dicrbpCmpuOgJJd8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/carrito",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"carrito"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Carrito-Lee por ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTkzMjFkMWE0MjA4YjRiYzFkMzYiLCJlbWFpbCI6ImNvcnJlbzA0QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjQsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA0IEFwZWxsaWRvIDA0IiwicmVmcmVzaEtleSI6IlFYOXkrYmNEdzkybjhrMCtKT1lMa2c9PSIsImlhdCI6MTcyMjYyNDY0NX0.WBJFOWdcA3xHhNKlgP1eMyaTzo1dicrbpCmpuOgJJd8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/carrito/66ad114c2cbb474a90a8fa0b",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"carrito",
+						"66ad114c2cbb474a90a8fa0b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Carrito-Modifica por ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTk0MTFkMWE0MjA4YjRiYzFkMzgiLCJlbWFpbCI6ImNvcnJlbzA1QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA1IEFwZWxsaWRvIDA1IiwicmVmcmVzaEtleSI6InBtMks2bVN6NEZ0UlhiU0tSQlI0U0E9PSIsImlhdCI6MTcyMjYyNDgyN30.Kza7X8a3K-I6T45-lz3r4lSUFwIwK5utvKBZWZcUKdg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": \"66ad2a0b4c58260073f0fb4c\",  // ID del usuario\r\n    \"items\": [\r\n        {\r\n            \"id_itm\": \"66abe5cec0e43f0075ac9d23\",  // ID del producto 1\r\n            \"cantidad\": 1,\r\n            \"precio\": 7,\r\n            \"total\": 7\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/carrito/66ad114c2cbb474a90a8fa0b",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"carrito",
+						"66ad114c2cbb474a90a8fa0b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Carrito-Elimna por ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTk0MTFkMWE0MjA4YjRiYzFkMzgiLCJlbWFpbCI6ImNvcnJlbzA1QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA1IEFwZWxsaWRvIDA1IiwicmVmcmVzaEtleSI6InBtMks2bVN6NEZ0UlhiU0tSQlI0U0E9PSIsImlhdCI6MTcyMjYyNDgyN30.Kza7X8a3K-I6T45-lz3r4lSUFwIwK5utvKBZWZcUKdg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/carrito/66ad2a0b4c58260073f0fb4c",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"carrito",
+						"66ad2a0b4c58260073f0fb4c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Carrito-Busca por UserID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTkzMjFkMWE0MjA4YjRiYzFkMzYiLCJlbWFpbCI6ImNvcnJlbzA0QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjQsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA0IEFwZWxsaWRvIDA0IiwicmVmcmVzaEtleSI6IlRXcHBheC9OQy9OSG9TREhoMis5Y3c9PSIsImlhdCI6MTcyMjYyNTI0NH0._hkTrt8ImWrT0fuWsbS16WqPmzlMSgNbBa9OWGGJLB8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/carritouserId/66a8191c1d1a4208b4bc1d32",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"carritouserId",
+						"66a8191c1d1a4208b4bc1d32"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ordenes-Registro",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTk0MTFkMWE0MjA4YjRiYzFkMzgiLCJlbWFpbCI6ImNvcnJlbzA1QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA1IEFwZWxsaWRvIDA1IiwicmVmcmVzaEtleSI6IjZOMEtTOHlaaG03ditpcDFhbzd5Ync9PSIsImlhdCI6MTcyMjYyODI0N30.lWmuYywQw_F7unB8Up-vn3QDMp32Ku-u25XjGq60wKM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": \"66a8191c1d1a4208b4bc1d32\",  // ID del user\r\n    \"total\": 300,\r\n    \"totigv\": 54,\r\n    \"totneto\": 354,\r\n    \"detalle\": [\r\n        {\r\n            \"id_itm\": \"66a919f30a093713703b6bab\",  // ID del producto 2\r\n            \"cantidad\": 2,\r\n            \"precio\": 4,\r\n            \"descuento\": 0,\r\n            \"total\": 8\r\n        },\r\n        {\r\n            \"id_itm\": \"66abbfbfdd1198575cd2ca84\",  // ID del producto 2\r\n            \"cantidad\": 1,\r\n            \"precio\": 7,\r\n            \"descuento\": 0,\r\n            \"total\": 7\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/ordenes",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"ordenes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ordenes-Lista Ordenes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTkzMjFkMWE0MjA4YjRiYzFkMzYiLCJlbWFpbCI6ImNvcnJlbzA0QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjQsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA0IEFwZWxsaWRvIDA0IiwicmVmcmVzaEtleSI6InkvamZYSnZCbEQzbHd3L3kvWkdNdlE9PSIsImlhdCI6MTcyMjU0NjAxOH0.VxeTYu7InM6y5FfyoBlmwqvU5CNC9medBIRt-fSBp7k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/ordenes",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"ordenes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ordenes-Lee por ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTkzMjFkMWE0MjA4YjRiYzFkMzYiLCJlbWFpbCI6ImNvcnJlbzA0QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjQsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA0IEFwZWxsaWRvIDA0IiwicmVmcmVzaEtleSI6InkvamZYSnZCbEQzbHd3L3kvWkdNdlE9PSIsImlhdCI6MTcyMjU0NjAxOH0.VxeTYu7InM6y5FfyoBlmwqvU5CNC9medBIRt-fSBp7k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/ordenes/66abfe73d71eb74154a22de3",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"ordenes",
+						"66abfe73d71eb74154a22de3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ordenes-Modifica por ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTk0MTFkMWE0MjA4YjRiYzFkMzgiLCJlbWFpbCI6ImNvcnJlbzA1QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA1IEFwZWxsaWRvIDA1IiwicmVmcmVzaEtleSI6IkVzcVZKU1hmcHV3Wi9JL0kyNmlEMVE9PSIsImlhdCI6MTcyMjYyODYxNH0.toMh4yy_pEHffFdaEOddIHHBVt83h0Un6sNsjtpoG8Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " // Estado: PENDIENTE - PAGADO - ENTREGADO - CANCELADO \r\n\r\n{\r\n    \"estado\": \"PAGADO\"   \r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/ordenes/66abff04d71eb74154a22de8",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"ordenes",
+						"66abff04d71eb74154a22de8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ordenes-Elimina por ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTk0MTFkMWE0MjA4YjRiYzFkMzgiLCJlbWFpbCI6ImNvcnJlbzA1QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA1IEFwZWxsaWRvIDA1IiwicmVmcmVzaEtleSI6IkVzcVZKU1hmcHV3Wi9JL0kyNmlEMVE9PSIsImlhdCI6MTcyMjYyODYxNH0.toMh4yy_pEHffFdaEOddIHHBVt83h0Un6sNsjtpoG8Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/ordenes/66ad3a49c87d46006115c706",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"ordenes",
+						"66ad3a49c87d46006115c706"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ordenes-Busca por User ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTk0MTFkMWE0MjA4YjRiYzFkMzgiLCJlbWFpbCI6ImNvcnJlbzA1QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA1IEFwZWxsaWRvIDA1IiwicmVmcmVzaEtleSI6IkVzcVZKU1hmcHV3Wi9JL0kyNmlEMVE9PSIsImlhdCI6MTcyMjYyODYxNH0.toMh4yy_pEHffFdaEOddIHHBVt83h0Un6sNsjtpoG8Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/ordenesuserID/66a819131d1a4208b4bc1d30",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"ordenesuserID",
+						"66a819131d1a4208b4bc1d30"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ordenes-Busca por Estado",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTk0MTFkMWE0MjA4YjRiYzFkMzgiLCJlbWFpbCI6ImNvcnJlbzA1QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA1IEFwZWxsaWRvIDA1IiwicmVmcmVzaEtleSI6IkVzcVZKU1hmcHV3Wi9JL0kyNmlEMVE9PSIsImlhdCI6MTcyMjYyODYxNH0.toMh4yy_pEHffFdaEOddIHHBVt83h0Un6sNsjtpoG8Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/ordenesestado/PAGADO",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"ordenesestado",
+						"PAGADO"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ordenes-Busca por NumOrden",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTk0MTFkMWE0MjA4YjRiYzFkMzgiLCJlbWFpbCI6ImNvcnJlbzA1QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA1IEFwZWxsaWRvIDA1IiwicmVmcmVzaEtleSI6IkVzcVZKU1hmcHV3Wi9JL0kyNmlEMVE9PSIsImlhdCI6MTcyMjYyODYxNH0.toMh4yy_pEHffFdaEOddIHHBVt83h0Un6sNsjtpoG8Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/ordenesnumero/ORD-00003",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"ordenesnumero",
+						"ORD-00003"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagos-Registro",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTk0MTFkMWE0MjA4YjRiYzFkMzgiLCJlbWFpbCI6ImNvcnJlbzA1QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA1IEFwZWxsaWRvIDA1IiwicmVmcmVzaEtleSI6InFrUmQ0NXNFU3MwQXplaXYyRjFkSmc9PSIsImlhdCI6MTcyMjY5NTczMH0.gPcmLpIDcy3gwysv_SE9EOrJFuB0GUcL9cBMKwUyimY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"order_id\" : \"66abff04d71eb74154a22de8\",\r\n    \"user_id\" : \"66a8191c1d1a4208b4bc1d32\",\r\n    \"montopago\" : 354,\r\n    \"metodopago\" : \"TARJETA\" ,\r\n    \"estadopago\" : \"PAGADO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/pagos",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"pagos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagos-Lista de Pagos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTkzMjFkMWE0MjA4YjRiYzFkMzYiLCJlbWFpbCI6ImNvcnJlbzA0QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjQsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA0IEFwZWxsaWRvIDA0IiwicmVmcmVzaEtleSI6IkhFZW4yNUlhbmNFOHJ3S3VSaXlRM0E9PSIsImlhdCI6MTcyMjU0ODAyMH0.90gHb5MAs41YQ_vAi5D-m4ZWjXbWWimVly5EQkU-hCk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/pagos",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"pagos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagos-Lee por ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTkzMjFkMWE0MjA4YjRiYzFkMzYiLCJlbWFpbCI6ImNvcnJlbzA0QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjQsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA0IEFwZWxsaWRvIDA0IiwicmVmcmVzaEtleSI6IkhFZW4yNUlhbmNFOHJ3S3VSaXlRM0E9PSIsImlhdCI6MTcyMjU0ODAyMH0.90gHb5MAs41YQ_vAi5D-m4ZWjXbWWimVly5EQkU-hCk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/pagos/66a943cbcac91741d09cdebb",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"pagos",
+						"66a943cbcac91741d09cdebb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagos-Modifica por ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTk0MTFkMWE0MjA4YjRiYzFkMzgiLCJlbWFpbCI6ImNvcnJlbzA1QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA1IEFwZWxsaWRvIDA1IiwicmVmcmVzaEtleSI6IjI5WnhWdUpHL1c0VkV0NHpCU2hLQnc9PSIsImlhdCI6MTcyMjU0ODI2Mn0.9ujwAunqSiSNFFc3al285E-IpAx5GtO5MyoTXMW9Xes",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"metodopago\" : \"EFECTIVO\"   // TARJETA - PAYPAL\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/pagos/66a943cbcac91741d09cdebb",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"pagos",
+						"66a943cbcac91741d09cdebb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagos-Elimina por ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTk0MTFkMWE0MjA4YjRiYzFkMzgiLCJlbWFpbCI6ImNvcnJlbzA1QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA1IEFwZWxsaWRvIDA1IiwicmVmcmVzaEtleSI6IjI5WnhWdUpHL1c0VkV0NHpCU2hLQnc9PSIsImlhdCI6MTcyMjU0ODI2Mn0.9ujwAunqSiSNFFc3al285E-IpAx5GtO5MyoTXMW9Xes",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/pagos/66ae415ca8b0ce0074970628",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"pagos",
+						"66ae415ca8b0ce0074970628"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagos-Busca por UserId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTk0MTFkMWE0MjA4YjRiYzFkMzgiLCJlbWFpbCI6ImNvcnJlbzA1QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA1IEFwZWxsaWRvIDA1IiwicmVmcmVzaEtleSI6IjFPSms2bThiYVdncFliVGlna2NuR1E9PSIsImlhdCI6MTcyMjY5NjIxMn0.qwB2YKO2dP8XpVAtnHWuVi0X4VNCH4gAi2yIrZMexvs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/pagosuserId/66a8191c1d1a4208b4bc1d32",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"pagosuserId",
+						"66a8191c1d1a4208b4bc1d32"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagos-Busca por MetodoPago",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTk0MTFkMWE0MjA4YjRiYzFkMzgiLCJlbWFpbCI6ImNvcnJlbzA1QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA1IEFwZWxsaWRvIDA1IiwicmVmcmVzaEtleSI6IjFPSms2bThiYVdncFliVGlna2NuR1E9PSIsImlhdCI6MTcyMjY5NjIxMn0.qwB2YKO2dP8XpVAtnHWuVi0X4VNCH4gAi2yIrZMexvs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/pagosmetodoPago/TARJETA",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"pagosmetodoPago",
+						"TARJETA"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagos-Busca por OrdenId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTk0MTFkMWE0MjA4YjRiYzFkMzgiLCJlbWFpbCI6ImNvcnJlbzA1QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA1IEFwZWxsaWRvIDA1IiwicmVmcmVzaEtleSI6IjFPSms2bThiYVdncFliVGlna2NuR1E9PSIsImlhdCI6MTcyMjY5NjIxMn0.qwB2YKO2dP8XpVAtnHWuVi0X4VNCH4gAi2yIrZMexvs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/pagosordenId/66a93d741a43894444f04037",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"pagosordenId",
+						"66a93d741a43894444f04037"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagos-Busca por NumOrden",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4MTk0MTFkMWE0MjA4YjRiYzFkMzgiLCJlbWFpbCI6ImNvcnJlbzA1QGNvcnJlby5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjIwNDgsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiTm9tYnJlIDA1IEFwZWxsaWRvIDA1IiwicmVmcmVzaEtleSI6IjFPSms2bThiYVdncFliVGlna2NuR1E9PSIsImlhdCI6MTcyMjY5NjIxMn0.qwB2YKO2dP8XpVAtnHWuVi0X4VNCH4gAi2yIrZMexvs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://e-commerce01-em3f.onrender.com/pagosOrden/ORD-00004",
+					"protocol": "https",
+					"host": [
+						"e-commerce01-em3f",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"pagosOrden",
+						"ORD-00004"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
